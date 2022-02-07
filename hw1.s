@@ -26,6 +26,11 @@ loop:
     addi	$t1, $t1, 1	# i = i + 1
     beq     $t4, 1, increment
     blt	    $t1, 32, loop	# repeat loop if count < 32
+	jal 	exit
+
+increment:
+    addi    $t2, $t2, 1 # increment 1's counter
+	blt	    $t1, 32, loop	# repeat loop if count < 32
 
 exit:	
     li	    $v0, 4 # print string
@@ -38,8 +43,3 @@ exit:
 
 	li	    $v0, 10 # exit
 	syscall
-
-increment:
-    addi    $t2, $t2, 1 # increment 1's counter
-	blt	    $t1, 32, loop	# repeat loop if count < 32
-	jal 	exit
