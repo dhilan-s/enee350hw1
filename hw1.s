@@ -26,7 +26,7 @@ loop:
     addi	$t1, $t1, 1	# i = i + 1
     beq     $t4, 1, increment
     blt	    $t1, 32, loop	# repeat loop if count < 32
-	jal 	exit
+	j 	exit
 
 increment:
     addi    $t2, $t2, 1 # increment 1's counter
