@@ -42,3 +42,4 @@ exit:
 increment:
     addi    $t2, $t2, 1 # increment 1's counter
 	blt	    $t1, 32, loop	# repeat loop if count < 32
+	jal 	exit
