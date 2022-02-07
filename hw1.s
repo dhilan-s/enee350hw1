@@ -1,8 +1,8 @@
 	.globl main
 
     .data
-	msg1:	.asciiz	"Enter A:   "
-	msg2:	.asciiz "Number of 1s in A = "
+	msg1:	.asciiz	"Enter A Number:   "
+	msg2:	.asciiz "Number of 1s in the number is = "
 
 	.text
 
@@ -27,10 +27,6 @@ loop:
     beq     $t4, 1, increment
     blt	    $t1, 32, loop	# repeat loop if count < 32
 
-increment:
-    addi    $t2, $t2, 1 # increment 1's counter
-	blt	    $t1, 32, loop	# repeat loop if count < 32
-
 exit:	
     li	    $v0, 4 # print string
 	la	    $a0, msg2 # prints msg2
@@ -42,3 +38,7 @@ exit:
 
 	li	    $v0, 10 # exit
 	syscall
+
+increment:
+    addi    $t2, $t2, 1 # increment 1's counter
+	blt	    $t1, 32, loop	# repeat loop if count < 32
